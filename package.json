@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dll": "NODE_ENV=production webpack --config webpack.dll.config.js --progress",
     "dll-dev": "webpack --config webpack.dll.config.js --progress",
-    "app-prod": "NODE_ENV=production FE_ENV=prod webpack --config webpack.production.js --progress",
-    "app-stg": "NODE_ENV=production FE_ENV=stg webpack --config webpack.staging.js --progress",
+    "app-prod": "NODE_ENV=production FE_ENV=production webpack --config webpack.production.config.js --progress",
+    "app-stg": "NODE_ENV=production FE_ENV=staging webpack --config webpack.staging.confg.js --progress",
     "build-prod": "npm run dll && npm run app-prod",
     "build-stg": "npm run dll && npm run app-stg"
   },

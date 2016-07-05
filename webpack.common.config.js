@@ -5,8 +5,8 @@ var _ = require('lodash');
 var bourbon = require('node-bourbon').includePaths;
 
 function getEntries() {
-  var entryBasePath = path.join(__dirname, 'src')
-  var entryFiles = glob.sync(path.join(entryBasePath, '**/entry.js'))
+  var entryBasePath = path.join(__dirname, 'src');
+  var entryFiles = glob.sync(path.join(entryBasePath, '**/entry.js'));
   var entryObj = {};
   var argv = require('yargs').argv;
 
@@ -59,7 +59,7 @@ var commonConfig = {
   ],
   resolve:{
     alias: {
-      config: __dirname + '/src/app/config/' + (process.env.FE_ENV || "dev")+'.js',
+      config: __dirname + '/src/app/config/' + (process.env.FE_ENV || "development")+'.js',
       app: __dirname + '/src/app'
 
     }
