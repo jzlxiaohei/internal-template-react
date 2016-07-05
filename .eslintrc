@@ -1,0 +1,25 @@
+{
+  "extends": "rackt",
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": 0,
+    "no-debugger": 0,
+    "semi": [2, "always"],
+    "array-bracket-spacing":0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+
+  "plugins": [
+    "react"      
+  ] 
+}
