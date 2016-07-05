@@ -5,8 +5,8 @@ var _ = require('lodash');
 var bourbon = require('node-bourbon').includePaths;
 
 function getEntries() {
-  var entryBasePath = path.join(__dirname, 'src');
-  var entryFiles = glob.sync(path.join(entryBasePath, '**/entry.js'));
+  var entryBasePath = path.join(__dirname, 'src')
+  var entryFiles = glob.sync(path.join(entryBasePath, '**/entry.js'))
   var entryObj = {};
   var argv = require('yargs').argv;
 
@@ -25,16 +25,14 @@ function getEntries() {
     }
     entryObj[key] = entryArr;
   });
-
+  
   return entryObj;
 }
-
-var entries = getEntries();
 
 var commonConfig = {
   cache: true,
   devtool: '#cheap-source-map',
-  entry: entries,
+  entry: getEntries(),
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',

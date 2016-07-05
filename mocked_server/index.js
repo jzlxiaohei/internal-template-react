@@ -1,13 +1,13 @@
-var path = require('path')
-var os = require('os')
+var path = require('path');
+var os = require('os');
 
-var urlJoin = require('url-join')
-var _ = require('lodash')
-var fsExtra = require('fs-extra')
+var urlJoin = require('url-join');
+var _ = require('lodash');
+var fsExtra = require('fs-extra');
 
 var meta =[
     require('./test_api')
-]
+];
 
 var allUrl = [];
 module.exports = function (app) {

@@ -23,8 +23,11 @@ class Layout extends React.Component {
       <nav className="layout-nav">
         <Menu onClick={this.handleNavMenuClick.bind(this)}
               selectedKeys={[this.state.currentNavKey]}
-              mode="inline" theme="dark">
-          <SubMenu title="首页">
+              mode="horizontal" theme="dark">
+          <Menu.Item key="index">
+            <Link to="/">首页</Link>
+          </Menu.Item>
+          <SubMenu key="about" title="关于">
             <Menu.Item key="index1">
               <Link to="/index1">index-1</Link>
             </Menu.Item>
@@ -32,10 +35,6 @@ class Layout extends React.Component {
               <Link to="/index2">index-2</Link>
             </Menu.Item>
           </SubMenu>
-
-          <Menu.Item key="about">
-            <Link to="/关于">Lessons</Link>
-          </Menu.Item>
 
           <Menu.Item key="login">
             <Link to="/login">登录</Link>

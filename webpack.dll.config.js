@@ -6,7 +6,7 @@ var assetsPluginInstance = require('./assetsPlugin')
 var deps = require('./package.json').dependencies;
 delete deps['antd'];// antd 使用官方的 babel-plugin-antd
 
-console.log(Object.keys(deps))
+console.log(Object.keys(deps));
 
 var config = {
   entry: {
@@ -45,7 +45,10 @@ if (process.env.NODE_ENV == 'production') {
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
       new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false },
+        compress: {
+          warnings: false,
+          drop_console: true
+        },
         output: { comments: false }
       })
     ]
