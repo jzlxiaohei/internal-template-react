@@ -10,6 +10,7 @@ class Layout extends React.Component {
     this.state = {
       currentNavKey: ''
     };
+    // this.handleNavMenuClick = this.handleNavMenuClick.bind(this);
   }
 
   handleNavMenuClick(e) {
@@ -21,9 +22,11 @@ class Layout extends React.Component {
   renderNav() {
     return (
       <nav className="layout-nav">
-        <Menu onClick={this.handleNavMenuClick.bind(this)}
-              selectedKeys={[this.state.currentNavKey]}
-              mode="horizontal" theme="dark">
+        <Menu
+          onClick={this.handleNavMenuClick}
+          selectedKeys={[this.state.currentNavKey]}
+          mode="horizontal" theme="dark"
+        >
           <Menu.Item key="index">
             <Link to="/">首页</Link>
           </Menu.Item>
@@ -56,4 +59,7 @@ class Layout extends React.Component {
   }
 }
 
+Layout.propTypes = {
+  children: React.PropTypes.object
+};
 export default Layout;

@@ -25,7 +25,7 @@ function getEntries() {
     }
     entryObj[key] = entryArr;
   });
-  
+
   return entryObj;
 }
 
@@ -64,7 +64,7 @@ var commonConfig = {
   },
   module: {
     preLoaders: [
-      { test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/ }
+      { test: /\.js|\.jsx$/, loader: "eslint-loader", exclude: /node_modules/ }
     ],
     loaders: [
       {

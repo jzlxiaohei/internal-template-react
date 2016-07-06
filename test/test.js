@@ -1,7 +1,7 @@
 import React from 'react';
 import test from 'ava';
 import { shallow, mount} from 'enzyme';
-import Index from '../src/app/pages/index';
+import Index from '../src/app/pages/index/Index';
 import EChartsWrapper from '../src/app/components/EChartsWrapper';
 
 test('Index',t=>{

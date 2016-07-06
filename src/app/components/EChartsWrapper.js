@@ -7,15 +7,15 @@ class EChartsWrapper extends React.Component {
     this.renderChart();
   }
 
+  componentDidUpdate() {
+    this.renderChart();
+  }
+
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose();
       this.chart = null;
     }
-  }
-
-  componentDidUpdate() {
-    this.renderChart();
   }
 
   renderChart() {
@@ -49,7 +49,8 @@ class EChartsWrapper extends React.Component {
 EChartsWrapper.propTypes = {
   option: React.PropTypes.object.isRequired,
   notMerge: React.PropTypes.bool,
-  notRefreshImmediately: React.PropTypes.bool
+  notRefreshImmediately: React.PropTypes.bool,
+  style: React.PropTypes.object
 };
 
 export default EChartsWrapper;

@@ -1,5 +1,5 @@
 {
-  "extends": "rackt",
+  "extends": "airbnb",
   "ecmaFeatures": {
     "jsx": true,
     "modules": true
@@ -15,11 +15,10 @@
     "no-debugger": 0,
     "semi": [2, "always"],
     "array-bracket-spacing":0,
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "comma-dangle": [2, "never"]
   },
 
   "plugins": [
-    "react"      
-  ] 
+    "react"
+  ]
 }
