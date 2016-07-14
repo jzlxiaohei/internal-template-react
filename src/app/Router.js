@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import Layout from './Layout';
+import Layout from './layout/Layout';
 import App from './pages/index/Index';
 
 

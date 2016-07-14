@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^1.6.3",
+    "classnames": "^2.2.5",
     "echarts": "^3.2.0",
     "lodash": "^4.13.1",
     "mobx": "^2.3.3",

@@ -1,9 +1,15 @@
+import './layout.scss';
+
 import React from 'react';
 import { Link } from 'react-router';
 import { Menu } from 'antd';
+import { observer } from 'mobx-react';
+import classNames from 'classnames';
+import appState from './../models/appState';
 
 const SubMenu = Menu.SubMenu;
 
+@observer
 class Layout extends React.Component {
   constructor(props) {
     super(props);
@@ -47,9 +53,26 @@ class Layout extends React.Component {
     );
   }
 
+  renderLoading() {
+    const coverClass = classNames({
+      'loading-cover': true,
+      hide: !appState.isLockScreen
+    });
+    return (
+      <div className={coverClass}>
+        <div className="spinner">
+          <div className="bounce1"></div>
+          <div className="bounce2"></div>
+          <div className="bounce3"></div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
+        {this.renderLoading()}
         {this.renderNav()}
         <div className="layout-content">
           {this.props.children}
