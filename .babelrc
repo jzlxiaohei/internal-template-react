@@ -1,9 +1,18 @@
 {
-  "presets": ["react","stage-0", "es2015"],
-  "plugins": [["antd", { "style": "css" }]],
-  "env": {
-    "development": {
-      "presets": ["react-hmre"]
-    }
-  }
+  "presets": [
+    "react",
+    "stage-0",
+    "es2015"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    [
+      "antd",
+      {
+        "style": "css"
+      }
+    ]
+  ]
 }

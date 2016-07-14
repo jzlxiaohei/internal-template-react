@@ -10,7 +10,7 @@ class Layout extends React.Component {
     this.state = {
       currentNavKey: ''
     };
-    // this.handleNavMenuClick = this.handleNavMenuClick.bind(this);
+    this.handleNavMenuClick = this.handleNavMenuClick.bind(this);
   }
 
   handleNavMenuClick(e) {

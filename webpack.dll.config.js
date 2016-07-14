@@ -10,7 +10,7 @@ console.log(Object.keys(deps));
 
 var config = {
   entry: {
-    vendor: Object.keys(deps)
+    vendor_dll: Object.keys(deps)
   },
   module: {
     loaders: [
@@ -23,15 +23,15 @@ var config = {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].dll.js",
-    library: "[name]_[hash]_dll", //和下得 DllPlugin的name对应
+    filename: "[name].js",
+    library: "[name]_[hash]", //和DllPlugin的name对应
     libraryTarget: "var"
   },
   plugins: [
     assetsPluginInstance,
     new webpack.DllPlugin({
       path: path.join(__dirname, "manifest", "vendor-manifest.json"),
-      name: "[name]_[hash]_dll"
+      name: "[name]_[hash]"
     }),
     new webpack.optimize.OccurenceOrderPlugin()
   ]
@@ -50,9 +50,22 @@ if (process.env.NODE_ENV == 'production') {
           drop_console: true
         },
         output: { comments: false }
-      })
+      }),
+      new webpack.DllPlugin({
+        path: path.join(__dirname, "manifest", "vendor-manifest.json"),
+        name: "[name]_[hash]"
+      }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.AggressiveMergingPlugin
     ]
   );
+} else {
+  config.plugins.push(
+    new webpack.DllPlugin({
+      path: path.join(__dirname, "manifest", "vendor-manifest-dev.json"),
+      name: "[name]_[hash]"
+    })
+  )
 }
 
 module.exports = config;

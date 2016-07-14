@@ -15,7 +15,8 @@
     "no-debugger": 0,
     "semi": [2, "always"],
     "array-bracket-spacing":0,
-    "comma-dangle": [2, "never"]
+    "comma-dangle": [2, "never"],
+    "react/jsx-space-before-closing":0
   },
 
   "plugins": [

@@ -22,6 +22,7 @@ function getEntries() {
     var entryArr = [filePath];
     if (process.env.NODE_ENV !== 'production') {
       entryArr.unshift('webpack-hot-middleware/client?reload=false');
+      entryArr.unshift('react-hot-loader/patch');
     }
     entryObj[key] = entryArr;
   });
@@ -51,7 +52,7 @@ var commonConfig = {
     new webpack.NoErrorsPlugin(),
     new webpack.DllReferencePlugin({
       context: '.',
-      manifest: require('./manifest/vendor-manifest.json'),
+      manifest: require('./manifest/vendor-manifest-dev.json'),
       sourceType: 'var'
     })
   ],
