@@ -3,11 +3,11 @@ import { observable, computed } from 'mobx';
 
 export default class Bar {
 
-  constructor() {
-    setInterval(() => {
-      this.data[5] = Math.round(Math.random() * 200);
-    }, 1500);
-  }
+  // constructor() {
+  //   setInterval(() => {
+  //     this.data[5] = Math.round(Math.random() * 200);
+  //   }, 1500);
+  // }
 
   @observable data = [10, 52, 200, 334, 390, 330];
 
